@@ -3,7 +3,8 @@
  */
 
 /**
- * @author Pc
+ * @author Grupo 7
+ * @version Final
  *
  */
 public class Driver implements RadioInterface {
@@ -24,7 +25,7 @@ public class Driver implements RadioInterface {
 	}
 
 	/**
-	 * 
+	 * Cambio a AM/FM
 	 */
 	public void AM_FM() {
 	Tune_Type=!Tune_Type;
@@ -34,13 +35,21 @@ public class Driver implements RadioInterface {
 		
 	}
 
-	@Override
+	/**
+	 * Cambio a AM/FM
+	 */
 	public void Cambio_de_Emisora(boolean a) {
-		// TODO Auto-generated method stub
+		if(a==true){
+			Tune=Tune+0.2;}
+		
+		if(a==false){
+			Tune=Tune+10;}
 		
 	}
 
-	@Override
+	/**
+	 * guarda emisora en el arreglo, en la posicion segun boton
+	 */
 	public void Guardar_Emisora(int x) {
 		if(Tune_Type==true){
 			AmArray[x]=Tune;
@@ -52,7 +61,9 @@ public class Driver implements RadioInterface {
 		
 	}
 
-	@Override
+	/**
+	 * Seleccionar emisora, segun boton seleccionado
+	 */
 	public void Seleccionar_emisora_guardada(int x) {
 		
 		if(Tune_Type==false){
@@ -68,13 +79,17 @@ public class Driver implements RadioInterface {
 		
 	}
 
-	@Override
+	/**
+	 * cambia el estado del boton Guardar o seleccionar
+	 */
 	public void Guardar_seleccion() {
 		Save_Selected=!Save_Selected;
 		
 	}
 
-	@Override
+	/**
+	 * get Emisora
+	 */
 	public double getEmisora() {
 		// TODO Auto-generated method stub
 		return 0;
